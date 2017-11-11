@@ -7,7 +7,10 @@ wget -q https://github.com/sans-dfir/sift-cli/releases/download/v1.5.1/sift-cli-
 #sha256sum -c sift-cli-linux.sha256.asc
 
 sudo apt-get install -y salt-minion
+sudo systemctl disable salt-minion &&\
+sudo systemctl stop salt-minion
 
 sudo cp -p sift-cli-linux /usr/local/bin/sift &&\
 sudo chmod 755 /usr/local/bin/sift
-sift install
+sudo sift install --user=ubuntu &&\
+  sudo sift upgrade
