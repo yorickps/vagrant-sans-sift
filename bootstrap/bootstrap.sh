@@ -6,6 +6,7 @@ wget -q https://github.com/sans-dfir/sift-cli/releases/download/v1.5.1/sift-cli-
 sudo -s
 useradd -p $(openssl passwd -1 ubuntu) ubuntu
 loadkeys be
+apt-get -y update &&\
 apt-get install -y salt-minion lxde xinit 
 
 echo "greeter-show-manual-login=true" > /usr/share/lightdm/lightdm.conf.d/50-show-login.conf
